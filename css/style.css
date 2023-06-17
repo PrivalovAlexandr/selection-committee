@@ -1,0 +1,291 @@
+:root {
+    --main-color-accent: #264BA1;
+    --dark-color-accent: #383B52;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    max-width: 900px;
+    background-color: bisque;
+    margin: auto;
+    padding: 50px 0;
+}
+
+section {
+    margin: 50px 25px;
+    padding: 25px;
+    border: solid 3px var(--main-color-accent);
+    border-radius: 25px;
+}
+
+
+.text-center {
+    text-align: center;
+}
+
+
+
+/* cards */
+
+.row-card {
+    display: flex;
+    justify-content: space-around;
+    gap: 100px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    font-weight: 300;
+
+    max-width: 40%;
+}
+
+.card h3 {
+    font-size: 14px;
+}
+
+.card ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    margin-top: 25px;
+
+    list-style: none;
+    font-size: 14px;
+}
+
+.card ul li div {
+    margin-top: 5px;
+}
+
+.card ul li::after {
+    content: '';
+    display: block;
+    
+    width: 0%;
+    height: 3px;
+    
+    border-radius: 100px;
+    background-color: var(--main-color-accent);
+    
+    margin: 3px 0;
+
+    transition: all 0.35s linear;
+}
+
+.card ul li:hover::after {
+    width: 80%;
+}
+
+.card li div {
+    display: flex;
+    align-items: center;
+}
+
+.card li div a {
+    color: var(--main-color-accent);
+    text-decoration: none;
+}
+
+.card li div svg {
+    fill: var(--main-color-accent);
+    margin-right: 5px;
+}
+
+/* button */
+
+.card button {
+    padding: 15px 30px;
+
+    font-size: 16px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+
+    background-color: transparent;
+    
+    border: solid 2px var(--main-color-accent);
+    border-radius: 50px;
+
+    align-self: center;
+
+    transition: all 0.3s linear;
+}
+
+.card button:hover {
+    background-color: var(--main-color-accent);
+    color: bisque;
+    
+    padding: 15px 40px;
+    
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+
+/* switcher */
+
+.switcher {
+    display: flex;
+    gap: 30px;
+    margin: 25px 15px;
+}
+
+.switcher button {
+    background: transparent;
+    border: none;
+
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    
+    transition: all 0.3s linear;
+}
+
+.switcher button.active-button {
+    color: var(--main-color-accent);
+    letter-spacing: 0.05em;
+}
+
+.switcher button::after {
+    content: '';
+    display: block;
+    
+    width: 0%;
+    height: 3px;
+    
+    border-radius: 100px;
+    background-color: var(--main-color-accent);
+    
+    margin: 3px auto;
+
+    transition: all 0.3s linear;
+}
+
+.switcher button.active-button::after,
+.switcher button:hover::after {
+    width: 80%;
+}
+
+
+/* table */
+
+table {
+    visibility: collapse;
+    border-spacing: 0;
+}
+
+.table {
+    opacity: 0;
+    overflow: auto;
+
+    transition: all 1s linear;
+}
+
+.table.active-table {
+    opacity: 1;
+}
+
+.table.active-table table {
+    visibility: visible;
+    border: 2px solid var(--main-color-accent);
+}
+
+
+.active-table table, tr, td, th {
+    font-size: 14px;
+
+    vertical-align: middle;
+    text-align: center;
+
+    border: 2px solid var(--main-color-accent);
+    padding: 6px;
+
+    border-collapse: collapse;
+}
+
+th {
+    font-size: 15px;
+}
+
+
+/* request docs */
+
+.request-docs article {
+    margin: 25px 10px;
+}
+
+.request-docs article h3 {
+    font-weight: 600;
+}
+
+.request-docs article ol {
+    margin: 15px;
+}
+
+.request-docs article ol li {
+    margin: 10px 0;
+}
+
+.request-docs article ol li::marker {
+    color: var(--main-color-accent);
+    font-weight: 300;
+}
+
+
+/* docs */
+
+.docs ul {
+    list-style: none;
+    margin: 25px 0;
+}
+
+.docs ul li {
+    margin: 15px 0;
+    padding: 10px;
+
+    list-style-image: url(../images/docs.svg);
+    list-style-position: inside;
+
+    border: solid 3px var(--main-color-accent);
+    border-radius: 5px;
+
+    transition: all 0.3s linear;
+}
+
+.docs ul li a {
+    color: inherit;
+    text-decoration: none;
+
+    vertical-align: super;
+}
+
+.docs ul li:hover {
+    color: var(--main-color-accent);
+}
+
+
+@media screen and (max-width: 650px) {
+    .row-card {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .row-card .card {
+        max-width: 100%;
+        gap: 20px;
+    }
+
+    .row-card .card ul {
+        margin: 0;
+    }
+}
