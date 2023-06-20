@@ -3,20 +3,23 @@
     --dark-color-accent: #383B52;
 }
 
-* {
+body {
+    max-width: 900px;
+    margin: 50px auto;
+}
+
+.enrollment * {
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
 }
 
-body {
-    max-width: 900px;
-    background-color: bisque;
-    margin: auto;
-    padding: 50px 0;
+.enrollment ul {
+    margin: 0;
+    padding: 0;
 }
 
-section {
+.enrollment section {
     margin: 50px 25px;
     padding: 25px;
     border: solid 3px var(--main-color-accent);
@@ -24,21 +27,33 @@ section {
 }
 
 
-.text-center {
+.enrollment .text-center {
     text-align: center;
 }
 
+.enrollment h2,
+.enrollment h3 {
+    font-weight: 600;
+}
+
+.enrollment h2 {
+    font-size: 24px;
+}
+
+.enrollment h3 {
+    font-size: 18px;
+    
+}
 
 
 /* cards */
 
-.row-card {
+.enrollment .row-card {
     display: flex;
-    justify-content: space-around;
-    gap: 100px;
+    justify-content: space-between;
 }
 
-.card {
+.enrollment .card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -48,26 +63,23 @@ section {
     max-width: 40%;
 }
 
-.card h3 {
+.enrollment .card h3 {
     font-size: 14px;
+    font-weight: 600;
 }
 
-.card ul {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
+.enrollment .card ul {
     margin-top: 25px;
 
     list-style: none;
     font-size: 14px;
 }
 
-.card ul li div {
+.enrollment .card ul li div {
     margin-top: 5px;
 }
 
-.card ul li::after {
+.enrollment .card ul li::after {
     content: '';
     display: block;
     
@@ -82,46 +94,44 @@ section {
     transition: all 0.35s linear;
 }
 
-.card ul li:hover::after {
+.enrollment .card ul li:hover::after {
     width: 80%;
 }
 
-.card li div {
+.enrollment .card li div {
     display: flex;
     align-items: center;
 }
 
-.card li div a {
+.enrollment .card li div a {
     color: var(--main-color-accent);
     text-decoration: none;
 }
 
-.card li div svg {
+.enrollment .card li div svg {
     fill: var(--main-color-accent);
     margin-right: 5px;
 }
 
 /* button */
 
-.card button {
+.enrollment .card .button_dikidi {
     padding: 15px 30px;
-
     font-size: 16px;
     font-weight: 300;
+    line-height: 1.5em;
     text-transform: uppercase;
     letter-spacing: 0.02em;
-
+    text-decoration: none;
+    color: var(--main-color-accent);
     background-color: transparent;
-    
     border: solid 2px var(--main-color-accent);
     border-radius: 50px;
-
     align-self: center;
-
     transition: all 0.3s linear;
 }
 
-.card button:hover {
+.enrollment .card .button_dikidi:hover {
     background-color: var(--main-color-accent);
     color: bisque;
     
@@ -134,13 +144,16 @@ section {
 
 /* switcher */
 
-.switcher {
+.enrollment .switcher {
     display: flex;
-    gap: 30px;
     margin: 25px 15px;
 }
 
-.switcher button {
+.enrollment .switcher button:last-child {
+    margin-left: 30px;
+}
+
+.enrollment .switcher button {
     background: transparent;
     border: none;
 
@@ -151,12 +164,12 @@ section {
     transition: all 0.3s linear;
 }
 
-.switcher button.active-button {
+.enrollment .switcher button.active-button {
     color: var(--main-color-accent);
     letter-spacing: 0.05em;
 }
 
-.switcher button::after {
+.enrollment .switcher button::after {
     content: '';
     display: block;
     
@@ -171,8 +184,8 @@ section {
     transition: all 0.3s linear;
 }
 
-.switcher button.active-button::after,
-.switcher button:hover::after {
+.enrollment .switcher button.active-button::after,
+.enrollment .switcher button:hover::after {
     width: 80%;
 }
 
@@ -180,63 +193,57 @@ section {
 /* table */
 
 table {
+    display: none;
     visibility: collapse;
     border-spacing: 0;
 }
 
-.table {
+.enrollment .table {
     opacity: 0;
     overflow: auto;
 
     transition: all 1s linear;
 }
 
-.table.active-table {
+.enrollment .table.active-table {
     opacity: 1;
 }
 
-.table.active-table table {
+.enrollment .table.active-table table {
     visibility: visible;
+    display: table;
     border: 2px solid var(--main-color-accent);
 }
 
 
-.active-table table, tr, td, th {
+.enrollment .active-table table,
+.enrollment .active-table table tr,
+.enrollment .active-table table td,
+.enrollment .active-table table th {
     font-size: 14px;
-
     vertical-align: middle;
     text-align: center;
-
     border: 2px solid var(--main-color-accent);
     padding: 6px;
-
     border-collapse: collapse;
-}
-
-th {
-    font-size: 15px;
 }
 
 
 /* request docs */
 
-.request-docs article {
+.enrollment .request-docs article {
     margin: 25px 10px;
 }
 
-.request-docs article h3 {
-    font-weight: 600;
-}
-
-.request-docs article ol {
+.enrollment .request-docs article ol {
     margin: 15px;
 }
 
-.request-docs article ol li {
+.enrollment .request-docs article ol li {
     margin: 10px 0;
 }
 
-.request-docs article ol li::marker {
+.enrollment .request-docs article ol li::marker {
     color: var(--main-color-accent);
     font-weight: 300;
 }
@@ -244,13 +251,15 @@ th {
 
 /* docs */
 
-.docs ul {
+.enrollment .docs ul {
     list-style: none;
     margin: 25px 0;
 }
 
-.docs ul li {
+.enrollment .docs ul li {
     margin: 15px 0;
+
+    font-size: 15px;
 
     border: solid 3px var(--main-color-accent);
     border-radius: 5px;
@@ -258,7 +267,7 @@ th {
     transition: all 0.3s linear;
 }
 
-.docs ul li a {
+.enrollment .docs ul li a {
     padding: 10px;
     
     display: block;
@@ -268,14 +277,14 @@ th {
     text-decoration: none;
 }
 
-.docs ul li a::before {
+.enrollment .docs ul li a::before {
     content: url(../images/docs.svg);
     display: inline-block;
     vertical-align: middle;
     margin-right: 10px;
 }
 
-.docs ul li:hover {
+.enrollment .docs ul li:hover {
     color: var(--main-color-accent);
 }
 
@@ -283,15 +292,23 @@ th {
 @media screen and (max-width: 650px) {
     .row-card {
         flex-direction: column;
-        gap: 50px;
     }
+
+    .row-card .card:last-child {
+        margin-top: 40px
+    }
+
 
     .row-card .card {
         max-width: 100%;
-        gap: 20px;
+    }
+
+    .row-card .card > *:not(:first-child) {
+        margin-top: 20px;
     }
 
     .row-card .card ul {
         margin: 0;
     }
 }
+
